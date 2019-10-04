@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="UTF-8">
-<meta name="viewport"
-      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 
@@ -179,7 +178,7 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">九月 27, 2019&nbsp;&nbsp;16:33:53</a>
+                        Date: <a href="#">十月 4, 2019&nbsp;&nbsp;16:01:03</a>
                         </span>
                     
                     
@@ -188,19 +187,170 @@
         </header>
 
         <div class="post-content">
-            <!DOCTYPE html>
-<html>
-<head><meta name="generator" content="Hexo 3.9.0">
-	<title>刹那</title>
-</head>
-<body>
-<h1>刹那</h1>
-<h2>朱自清</h2>
-<p>
-刹那主义所代表的是一种与现代性不同的时间观念，即对当前的强调和对过去以及未来的否定。当前成为被关注的焦点，与现在有关的一切，特别是审美，受到突出地强调。在这里，时间实际上已经停止，并且向空间形式转化。把当前与过去和未来切断并孤立起来的结果，就是主体对现在的体验其深度和强度极大地增加；感觉、视觉、听觉本身得到充分地发展。同时，客体的审美性质也大大加强。所以身体、物体等等都成为审美欣赏的对象而得到顶礼膜拜。詹明信在谈到精神分裂病人对世界的体验的哲学和美学意义时指出，"由于时间的连续性被切断，对于当前的体验变得强而有力，极为生动而且’物质化’：精神分裂者面前的世界极为浓烈，具有神秘而压抑的色彩，闪烁着幻觉的力量。" 莎乐美在剧终捧着刚刚砍下的约翰的头颅，吻着他的唇、尝着他的血唱道:“这也许是爱情的滋味吧。”许多文学评论家将这个段落总结为“刹那主义”，在这一刻，时间停止了，过去被否定了，未来也被否定了，但空间的感受被无限放大，这一瞬间是人生中的最美丽。英国的文艺理论家雷彻尔·鲍尔比将消费主义和王尔德联系在一起，现代广告促销物品带来的瞬间快感正是消费文化的开端，正是瞬间的快感将消费和唯美纠缠在一起。从这个角度看，张国荣是一个美丽又脆弱的娱乐工业的产物，当他从文华酒店24层跳下的时候，辉煌的过去被否定了，曼妙的未来被否定了，他心中最强烈的情感被放大。
-</p>
-</body>
-</html>
+            <h2 id="集合类"><a href="#集合类" class="headerlink" title="集合类"></a>集合类</h2><h4 id="1-为什么使用集合"><a href="#1-为什么使用集合" class="headerlink" title="1. 为什么使用集合"></a>1. 为什么使用集合</h4><p>当数据不确定,种类数量繁多之时,仅用数组存储数据就显得捉襟见肘,且数组不能动态增加空间,这时候就要使用集合框架.</p>
+<h4 id="2-什么是java集合框架"><a href="#2-什么是java集合框架" class="headerlink" title="2. 什么是java集合框架"></a>2. 什么是java集合框架</h4><p>直接来讲的话,就是一组能够存储对象的容器(动态),可以动态的增加大小.</p>
+<h4 id="3-javaSE提供了"><a href="#3-javaSE提供了" class="headerlink" title="3. javaSE提供了"></a>3. javaSE提供了</h4><pre><code>1. Collection 接口:存储另一个元素的集合,Collection接口之下有List,Set,Queue 三个子接口.
+2. Map 接口(图):存储 键/值对
+3. Collections:操作集合的工具类</code></pre><h4 id="4-Collection架构"><a href="#4-Collection架构" class="headerlink" title="4. Collection架构"></a>4. Collection架构</h4><p>刚开始学习时,我们是从定义变量开始学习,然后学到面向对象后,我们会发现我们不是再开始定义变量了,而是开始定义对象了,定义对象,其实就是在定义一个新的数据类型,然后现在开始是一个面向接口编程的过程.</p>
+<pre><code>Collection之下的三种主要类型集合(子接口)
+1.Set集合(规则集):存储一组不重复的元素(无序)
+2.List集合(线性集):存储一个有序集合
+3.Queue(队列):存储用先进先出方式处理的对象</code></pre><ol>
+<li>集合框架所有的类和接口都是放在java.util中,比较方便</li>
+<li>集合框架中所有的类都实现了Cloneable(克隆)接口和 Serializable(序列化)接口.序列化接口简单来说就是把一个对象从内存中存到硬盘上去,克隆接口就是顾名思义,即复制功能,可以直接复制对象,不需要重新New一个.</li>
+<li>基本思路就是用接口抽象类提供定义,用实现类提供实现.</li>
+<li>注意:Collection虽然是集合的最高父类借口,但是直接使用此接口会造成操作意义不明确,所以在实际开发中尽量不要使用.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>(常用)方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>boolean add(E e); / int size();</td>
+<td>向集合中添加元素e / 返回集合中元素的个数</td>
+</tr>
+<tr>
+<td>boolean addAll(Collection&lt;? extends E&gt; c);</td>
+<td>将集合c中的所有元素添加到当前这个集合</td>
+</tr>
+<tr>
+<td>boolean contains(Object o);</td>
+<td>如果该集合中包含对象o,返回true</td>
+</tr>
+<tr>
+<td>boolean containsAll(Collection&lt;?&gt; c);</td>
+<td>如果该集合中包含集合c中所有元素,返回true</td>
+</tr>
+<tr>
+<td>boolean isEmpty(); / void clear();</td>
+<td>如果集合不包含任何元素,返回true / 删除集合中所有元素</td>
+</tr>
+<tr>
+<td>Iterator<e> iterator();</e></td>
+<td>返回该集合中元素使用的迭代器</td>
+</tr>
+<tr>
+<td>boolean remove(Object o);</td>
+<td>从集合中删除元素o</td>
+</tr>
+<tr>
+<td>boolean removeAll(Collction &lt;?&gt; c);</td>
+<td>从集合中删除集合c中所有的元素</td>
+</tr>
+<tr>
+<td>boolean retainAll(Collection&lt;?&gt; c);</td>
+<td>保留c和该集合都有的元素(交集)</td>
+</tr>
+<tr>
+<td>Object[] toArray</td>
+<td>返回该集合元素构成的Object数组</td>
+</tr>
+</tbody></table>
+<h4 id="List接口"><a href="#List接口" class="headerlink" title="List接口"></a>List接口</h4><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>add(int index, E element)</td>
+<td>在指定位置增加元素</td>
+</tr>
+<tr>
+<td>add(int index, Collcetion&lt;? extends E&gt; c)</td>
+<td>在指定位置增加一组元素</td>
+</tr>
+<tr>
+<td>get (int index) / set(int index, E element)</td>
+<td>返回指定位置的元素 / 替换指定位置的元素</td>
+</tr>
+<tr>
+<td>indexOf(Object o)</td>
+<td>查找指定元素的位置</td>
+</tr>
+<tr>
+<td>lastIndexOf(Object o)</td>
+<td>从后往前查找指定元素的位置</td>
+</tr>
+<tr>
+<td>ListIterator<e> listIterator()</e></td>
+<td>获得List迭代器对象</td>
+</tr>
+<tr>
+<td>E remove (int index)</td>
+<td>删除指定位置的元素</td>
+</tr>
+<tr>
+<td>List<e> subList(int fromIndex, int toIndex)</e></td>
+<td>取出集合中的子集合</td>
+</tr>
+<tr>
+<td>E set(int index, E element)</td>
+<td>替换指定位置元素</td>
+</tr>
+</tbody></table>
+<p>多态:使用List接口的一个子类ArrayList进行实现</p>
+<p>遍历一个List</p>
+<pre><code>1.
+for (int i = 0; i &lt; list.size(); i++)
+{
+    System.out.print(list.get(i) + &quot;\t&quot;);
+}
+
+
+2.foreach循环
+for(String str : list)
+{
+    System.out.print(str + &quot;,&quot;);
+}
+
+
+3.使用迭代器
+Iterator&lt;String&gt; it = list.iterator();
+while(it.hasNext())
+{
+    System.out.print(it.next() + &quot;, &quot;);
+}
+
+
+4.使用ListIterator迭代器
+ListIterator&lt;String&gt; listIt = list.listIterator();
+while(listIt.hasNext())
+{
+    System.out.print(listIt.next() + &quot;, &quot;);
+}</code></pre><p>注意:ListIterator与传统迭代器的区别</p>
+<ol>
+<li>ListIterator 不只可以向后访问,还可以向前访问</li>
+<li>ListIterator 可以修改集合中的元素</li>
+</ol>
+<p>例如</p>
+<pre><code>ListIterator&lt;String&gt; listIt2 = list1.listIterator(list1.size());
+while(listIt2.hasPrevious())
+{
+    System.out.print(listIt2.previous() + &quot;, &quot;);
+}</code></pre><p><strong>那么为什么要使用迭代器呢?</strong></p>
+<ol>
+<li>在遍历集合时,可以不依赖某个类的实现</li>
+<li>可以用来隐藏实现细节.</li>
+</ol>
+<p>&nbsp;</p>
+<p><strong>ArrayList(数组线性表)</strong></p>
+<ol>
+<li>是一个大小可变的数组,在内存中分配连续的空间</li>
+<li>遍历元素和随机访问元素的效率比较高</li>
+</ol>
+<p>&nbsp;</p>
+<p><strong>LinkedList(链表)</strong></p>
+<ol>
+<li>采用链表存储方式</li>
+<li>提供从线性表两端提取,插入和删除元素的方法</li>
+<li>插入和删除元素效率比较高</li>
+</ol>
+
         </div>
 
         
@@ -214,7 +364,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="https://JiaJunTien.github.io/2019/09/27/国庆/">https://JiaJunTien.github.io/2019/09/27/国庆/</a></span>
+                        <span><a href="https://JiaJunTien.github.io/2019/10/04/集合类/">https://JiaJunTien.github.io/2019/10/04/集合类/</a></span>
                     </p>
                 
                 
@@ -226,7 +376,7 @@
                 
                      <p class="copyright-item">
                          <span>Slogan:</span>
-                         <span>Do you believe in <strong>DESTINY<strong>?</span>
+                         <span>Do you believe in <strong>DESTINY<strong>?</strong></strong></span>
                      </p>
                 
 
@@ -247,10 +397,8 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2019/10/04/集合类/"></a>
             
-            
-            <a class="next" rel="next" href="/2019/09/26/hh/"></a>
+            <a class="next" rel="next" href="/2019/09/27/国庆/"></a>
             
         </section>
 
